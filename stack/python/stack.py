@@ -3,15 +3,16 @@ class Stack:
     
     Sample text
     """
-    def __init__(self, size=-1) -> None:
+    def __init__(self, max=-1) -> None:
         self.stack = []
-        self.size = size
+        self.max = max
         
     def push(self, input) -> None:
-        self.stack.append(input)
+        if len(self.stack) < self.size or self.max < 0:
+            self.stack.append(input)
         
     def pop(self) -> None:
-        self.stack.pop
+        self.stack.pop(-1)
         
     def peek(self) -> any:
         return(self.stack[-1])
@@ -20,9 +21,9 @@ class Stack:
         return self.stack == []       
 
     def isFull(self) -> bool:
-        if self.size != -1:
-            return len(self.stack) == self.size
+        if self.max != -1:
+            return len(self.stack) == self.max
         return False
     
-if __name__ == '__init__':
-    
+    def size(self) -> int:
+        return len(self.stack)
